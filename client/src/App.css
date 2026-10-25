@@ -39,6 +39,54 @@ body {
   font-size: 14px;
 }
 
+.task-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  padding: 18px 14px;
+  border: 1px solid #2d3340;
+  border-radius: 10px;
+  background: #1a1e26;
+}
+
+.stat-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: #a1a8b7;
+  font-size: 12px;
+}
+
+.stat-card strong {
+  color: #e8eaf0;
+  font-size: 26px;
+}
+
+.stat-card .pending-count {
+  color: #f2c56b;
+}
+
+.stat-card .completed-count {
+  color: #79d6ac;
+}
+
+@media (max-width: 540px) {
+  .task-stats {
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 14px 10px;
+  }
+
+  .stat-card strong {
+    font-size: 23px;
+  }
+}
+
 input,
 button {
   font: inherit;
@@ -224,11 +272,11 @@ input:focus-visible {
     flex-wrap: wrap;
   }
 
-  .add-form > input {
+  .add-form>input {
     flex: 1 1 200px;
   }
 
-  .add-form > button {
+  .add-form>button {
     flex-grow: 1;
   }
 }

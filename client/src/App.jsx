@@ -142,6 +142,27 @@ export default function App() {
       <p>Manage your daily tasks.</p>
     </header>
 
+    <section className="task-stats" aria-label="Task summary">
+  <div className="stat-card">
+    <span>Total tasks</span>
+    <strong>{loading ? "—" : tasks.length}</strong>
+  </div>
+
+  <div className="stat-card">
+    <span>Pending</span>
+    <strong className="pending-count">
+      {loading ? "—" : tasks.filter((task) => !task.completed).length}
+    </strong>
+  </div>
+
+  <div className="stat-card">
+    <span>Completed</span>
+    <strong className="completed-count">
+      {loading ? "—" : tasks.filter((task) => task.completed).length}
+    </strong>
+  </div>
+</section>
+
     <form className="add-form" onSubmit={addTask}>
       <label className="sr-only" htmlFor="new-task">
         New task
