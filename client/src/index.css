@@ -1,10 +1,10 @@
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
   #social .button-icon {
