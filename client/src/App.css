@@ -280,3 +280,34 @@ input:focus-visible {
     flex-grow: 1;
   }
 }
+
+.task-finder {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #363c49;
+}
+
+.task-finder h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+.task-finder .add-form {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.task-finder select {
+  flex: 1;
+  min-width: 120px;
+  padding: 11px;
+  border: 1px solid #363c49;
+  border-radius: 8px;
+  background: #1a1e26;
+  color: #e8eaf0;
+}
+
+.task-finder select:focus-visible {
+  outline: 2px solid #a99aff;
+  outline-offset: 3px;
+}

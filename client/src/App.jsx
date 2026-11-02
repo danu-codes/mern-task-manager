@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import TaskFinder from "./TaskFinder";
 import "./App.css";
 
 async function apiRequest(path, options = {}) {
@@ -273,6 +274,7 @@ export default function App() {
         ))}
       </ul>
     )}
+    <TaskFinder />
   </main>
 );
 }

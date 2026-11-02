@@ -72,7 +72,26 @@ function validateTask(req, res, next) {
 
 // READ: retrieve every task.
 app.get("/api/tasks", async (req, res) => {
-  const tasks = await Task.find().sort({ createdAt: -1 });
+  const status = req.query.status ?? "all";
+
+  if (
+    typeof status !== "string" ||
+    !["all", "pending", "completed"].includes(status)
+  ) {
+    return res.status(400).json({
+      message: "Status must be all, pending, or completed.",
+    });
+  }
+
+  const filter = {};
+
+  if (status === "pending") {
+    filter.completed = false;
+  } else if (status === "completed") {
+    filter.completed = true;
+  }
+
+  const tasks = await Task.find(filter).sort({ createdAt: -1 });
   res.json(tasks);
 });
 
